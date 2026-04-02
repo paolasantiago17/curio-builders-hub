@@ -208,7 +208,7 @@ export default function EventRoadmap({ events }: EventRoadmapProps) {
               <div className="relative z-10">
                 <div className="flex items-center justify-between mb-3">
                   <h4 className="font-space-grotesk font-bold text-base text-deep-navy">
-                    Location Note
+                    Sponsor Our Events!
                   </h4>
                   <span className="font-space-grotesk text-[10px] font-bold uppercase tracking-wider text-white bg-deep-navy px-2 py-1 rounded-full">
                     Sponsor

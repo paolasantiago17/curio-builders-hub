@@ -1,4 +1,5 @@
 import BuilderCard, { BuilderProfile } from "./BuilderCard";
+import FeatureContactForm from "./FeatureContactForm";
 
 const seedBuilders: BuilderProfile[] = [
   {
@@ -150,27 +151,26 @@ export default function CommunityBoard({ builders }: CommunityBoardProps) {
 
           {/* "Your Project Here" card — spans 2 cols on last row */}
           <div className="md:col-span-1 lg:col-span-2">
-            <div className="rounded-2xl p-10 flex flex-col items-center justify-center gap-5 min-h-[200px] text-center h-full" style={{background: "linear-gradient(145deg, #415A96 0%, #2a3a5c 100%)"}}>
-              <div className="w-11 h-11 rounded-full bg-white/15 flex items-center justify-center">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="text-white">
-                  <line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                  <line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                </svg>
+            <div className="rounded-2xl p-8 h-full" style={{background: "linear-gradient(145deg, #415A96 0%, #2a3a5c 100%)"}}>
+              <div className="flex flex-col md:flex-row gap-8 items-center h-full">
+                <div className="space-y-2 flex-shrink-0 text-center md:text-left">
+                  <div className="w-11 h-11 rounded-full bg-white/15 flex items-center justify-center mx-auto md:mx-0">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="text-white">
+                      <line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                      <line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                    </svg>
+                  </div>
+                  <h3 className="font-space-grotesk font-bold text-lg text-white">
+                    Your Project Here
+                  </h3>
+                  <p className="font-manrope text-sm text-white/65 leading-relaxed max-w-xs">
+                    Get featured in front of hundreds of builders. Find the connections, talent, and feedback you need to scale your idea.
+                  </p>
+                </div>
+                <div className="w-full md:max-w-sm">
+                  <FeatureContactForm />
+                </div>
               </div>
-              <div className="space-y-2">
-                <h3 className="font-space-grotesk font-bold text-lg text-white">
-                  Your Project Here
-                </h3>
-                <p className="font-manrope text-sm text-white/65 leading-relaxed max-w-xs">
-                  Get featured in front of hundreds of builders. Find the connections, talent, and feedback you need to scale your idea.
-                </p>
-              </div>
-              <a
-                href="#"
-                className="font-manrope font-semibold text-sm text-white bg-white/20 border border-white/30 px-6 py-2.5 rounded-full hover:bg-white hover:text-deep-navy transition-colors"
-              >
-                Apply to Feature →
-              </a>
             </div>
           </div>
         </div>

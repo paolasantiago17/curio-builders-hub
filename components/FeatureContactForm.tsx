@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/mjgpejva";
 
-export default function SponsorContactForm() {
+export default function FeatureContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -40,44 +40,44 @@ export default function SponsorContactForm() {
             <path d="M3 8l3.5 3.5L13 4.5" stroke="#16a34a" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
-        <p className="font-space-grotesk font-bold text-sm text-deep-navy">Message sent!</p>
-        <p className="font-manrope text-xs text-deep-navy/60">We&apos;ll be in touch soon.</p>
+        <p className="font-space-grotesk font-bold text-sm text-white">Message sent!</p>
+        <p className="font-manrope text-xs text-white/60">We&apos;ll be in touch soon.</p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-2 mt-3">
-      <input type="hidden" name="_subject" value="Sponsor Inquiry — Curio Builder's Hub" />
+    <form onSubmit={handleSubmit} className="flex flex-col gap-2 w-full">
+      <input type="hidden" name="_subject" value="Feature Inquiry — Curio Builder's Hub" />
       <input
         type="text"
         name="name"
         placeholder="Your name"
         required
-        className="w-full font-manrope text-xs text-deep-navy bg-white border border-deep-navy/15 rounded-lg px-3 py-2 placeholder:text-deep-navy/40 focus:outline-none focus:border-wisteria transition-colors"
+        className="w-full font-manrope text-xs text-deep-navy bg-white/90 border border-white/20 rounded-lg px-3 py-2 placeholder:text-deep-navy/40 focus:outline-none focus:border-white transition-colors"
       />
       <input
         type="email"
         name="email"
         placeholder="Your email"
         required
-        className="w-full font-manrope text-xs text-deep-navy bg-white border border-deep-navy/15 rounded-lg px-3 py-2 placeholder:text-deep-navy/40 focus:outline-none focus:border-wisteria transition-colors"
+        className="w-full font-manrope text-xs text-deep-navy bg-white/90 border border-white/20 rounded-lg px-3 py-2 placeholder:text-deep-navy/40 focus:outline-none focus:border-white transition-colors"
       />
       <textarea
         name="message"
-        placeholder="Message"
+        placeholder="Tell us about your project"
         rows={2}
-        className="w-full font-manrope text-xs text-deep-navy bg-white border border-deep-navy/15 rounded-lg px-3 py-2 placeholder:text-deep-navy/40 focus:outline-none focus:border-wisteria transition-colors resize-none"
+        className="w-full font-manrope text-xs text-deep-navy bg-white/90 border border-white/20 rounded-lg px-3 py-2 placeholder:text-deep-navy/40 focus:outline-none focus:border-white transition-colors resize-none"
       />
       <button
         type="submit"
         disabled={status === "sending"}
-        className="w-full font-space-grotesk font-bold text-xs uppercase tracking-wider text-white bg-deep-navy rounded-lg py-2.5 hover:bg-wisteria transition-colors disabled:opacity-60 mt-1"
+        className="w-full font-space-grotesk font-bold text-xs uppercase tracking-wider text-deep-navy bg-white rounded-lg py-2.5 hover:bg-pearl-beige transition-colors disabled:opacity-60 mt-1"
       >
-        {status === "sending" ? "Sending…" : "Get in Touch"}
+        {status === "sending" ? "Sending…" : "Apply to Feature"}
       </button>
       {status === "error" && (
-        <p className="font-manrope text-xs text-red-500 text-center">Something went wrong — try again.</p>
+        <p className="font-manrope text-xs text-red-300 text-center">Something went wrong — try again.</p>
       )}
     </form>
   );
