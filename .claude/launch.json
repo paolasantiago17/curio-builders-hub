@@ -1,0 +1,15 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "curio-dev",
+      "runtimeExecutable": "/Users/psproductperson/.nvm/versions/node/v20.19.5/bin/node",
+      "runtimeArgs": ["/Users/psproductperson/.nvm/versions/node/v20.19.5/bin/npm", "run", "dev"],
+      "port": 3000,
+      "autoPort": true,
+      "env": {
+        "PATH": "/Users/psproductperson/.nvm/versions/node/v20.19.5/bin:/usr/local/bin:/usr/bin:/bin"
+      }
+    }
+  ]
+}

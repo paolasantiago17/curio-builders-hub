@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: var(--font-manrope), sans-serif;
+    background-color: #F5F5F7;
+    color: #415A96;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-space-grotesk), sans-serif;
+  }
+}
+
+@layer utilities {
+  .blueprint-border {
+    border: 1px solid rgba(65, 90, 150, 0.15);
+  }
+
+  .blueprint-border-b {
+    border-bottom: 1px solid rgba(65, 90, 150, 0.15);
+  }
+
+  .blueprint-border-l {
+    border-left: 4px solid rgba(65, 90, 150, 0.15);
+  }
+}
