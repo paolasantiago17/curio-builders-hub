@@ -1,4 +1,17 @@
+import type { Metadata } from "next";
 import Hero from "@/components/Hero";
+
+export const metadata: Metadata = {
+  title: "Curio Builder's Hub — Where Builders Connect",
+  description:
+    "A cultivated community for builders, founders, and makers in Vancouver. Join co-working sessions, meet your next collaborator, and get featured on the community board.",
+  openGraph: {
+    url: "https://curio.community",
+  },
+  alternates: {
+    canonical: "https://curio.community",
+  },
+};
 import Philosophy from "@/components/Philosophy";
 import EventRoadmap from "@/components/EventRoadmap";
 import CTA from "@/components/CTA";

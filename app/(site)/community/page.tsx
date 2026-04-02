@@ -1,4 +1,20 @@
+import type { Metadata } from "next";
 import CommunityBoard from "@/components/CommunityBoard";
+
+export const metadata: Metadata = {
+  title: "Community Board",
+  description:
+    "Meet the builders at Curio. Discover what people are building, find collaborators, and connect with founders across Vancouver.",
+  openGraph: {
+    url: "https://curio.community/community",
+    title: "Community Board | Curio Builder's Hub",
+    description:
+      "Meet the builders at Curio. Discover what people are building, find collaborators, and connect with founders across Vancouver.",
+  },
+  alternates: {
+    canonical: "https://curio.community/community",
+  },
+};
 import { client } from "@/sanity/lib/client";
 import { buildersQuery } from "@/sanity/lib/queries";
 

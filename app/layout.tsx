@@ -15,9 +15,42 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Curio Builder's Hub — A Community for Builders & Founders",
+  metadataBase: new URL("https://curio.community"),
+  title: {
+    default: "Curio Builder's Hub — Where Builders Connect",
+    template: "%s | Curio Builder's Hub",
+  },
   description:
-    "A cultivated space for builders, by builders. Drop in for co-working, connections, and community support.",
+    "A cultivated community for builders, founders, and makers in Vancouver. Join co-working sessions, meet your next collaborator, and get featured on the community board.",
+  keywords: ["builders community", "founders", "Vancouver startups", "co-working", "makers", "Curio"],
+  authors: [{ name: "Curio Builder's Hub", url: "https://curio.community" }],
+  openGraph: {
+    type: "website",
+    url: "https://curio.community",
+    siteName: "Curio Builder's Hub",
+    title: "Curio Builder's Hub — Where Builders Connect",
+    description:
+      "A cultivated community for builders, founders, and makers in Vancouver. Join co-working sessions, meet your next collaborator, and get featured on the community board.",
+    images: [
+      {
+        url: "/images/hero-event.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Curio Builder's Hub — community gathering",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Curio Builder's Hub — Where Builders Connect",
+    description:
+      "A cultivated community for builders, founders, and makers in Vancouver.",
+    images: ["/images/hero-event.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
