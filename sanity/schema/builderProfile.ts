@@ -68,6 +68,9 @@ export const builderProfile = defineType({
       },
       initialValue: "draft",
     }),
+    defineField({ name: "website", type: "url", title: "Website URL", description: "e.g. https://yoursite.com" }),
+    defineField({ name: "linkedin", type: "url", title: "LinkedIn URL", description: "e.g. https://linkedin.com/in/yourname" }),
+    defineField({ name: "instagram", type: "url", title: "Instagram URL", description: "e.g. https://instagram.com/yourhandle" }),
     defineField({ name: "order", type: "number", title: "Display Order" }),
   ],
 });

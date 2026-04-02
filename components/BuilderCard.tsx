@@ -11,6 +11,9 @@ export interface BuilderProfile {
   cardStyle?: "default" | "quote" | "dark" | "image-left";
   avatarUrl?: string | null;
   projectImageUrl?: string | null;
+  website?: string | null;
+  linkedin?: string | null;
+  instagram?: string | null;
 }
 
 function getInitials(name: string): string {
@@ -52,6 +55,38 @@ function AskBox({ ask, label = "THEIR ASK", dark = false }: { ask: string; label
   );
 }
 
+function SocialLinks({ website, linkedin, instagram, dark = false }: { website?: string | null; linkedin?: string | null; instagram?: string | null; dark?: boolean }) {
+  const links = [
+    website && { href: website, label: "Website", icon: (
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </svg>
+    )},
+    linkedin && { href: linkedin, label: "LinkedIn", icon: (
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/>
+      </svg>
+    )},
+    instagram && { href: instagram, label: "Instagram", icon: (
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+      </svg>
+    )},
+  ].filter(Boolean) as { href: string; label: string; icon: React.ReactNode }[];
+
+  if (links.length === 0) return null;
+  return (
+    <div className="flex items-center gap-2 mt-1">
+      {links.map(({ href, label, icon }) => (
+        <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
+          className={`flex items-center justify-center w-7 h-7 rounded-full transition-colors ${dark ? "text-white/50 hover:text-white bg-white/10 hover:bg-white/20" : "text-deep-navy/40 hover:text-wisteria bg-deep-navy/5 hover:bg-periwinkle/20"}`}>
+          {icon}
+        </a>
+      ))}
+    </div>
+  );
+}
+
 function CategoryTag({ category, dark = false }: { category: string; dark?: boolean }) {
   if (dark) {
     return (
@@ -72,7 +107,7 @@ interface BuilderCardProps {
 }
 
 export default function BuilderCard({ profile }: BuilderCardProps) {
-  const { name, role, category, project, ask, askLabel, cardStyle = "default", avatarUrl, projectImageUrl } = profile;
+  const { name, role, category, project, ask, askLabel, cardStyle = "default", avatarUrl, projectImageUrl, website, linkedin, instagram } = profile;
   const resolvedAskLabel = askLabel || "THEIR ASK";
 
   // Quote style
@@ -85,6 +120,7 @@ export default function BuilderCard({ profile }: BuilderCardProps) {
             <div>
               <p className="font-space-grotesk font-bold text-sm text-deep-navy leading-tight">{name}</p>
               {role && <p className="font-manrope text-xs text-deep-navy/45 mt-0.5">{role}</p>}
+              <SocialLinks website={website} linkedin={linkedin} instagram={instagram} />
             </div>
           </div>
           {category && <CategoryTag category={category} />}
@@ -126,6 +162,7 @@ export default function BuilderCard({ profile }: BuilderCardProps) {
               <div>
                 <p className="font-space-grotesk font-bold text-sm text-white leading-tight">{name}</p>
                 {role && <p className="font-manrope text-[11px] text-white/45 mt-0.5">{role}</p>}
+                <SocialLinks website={website} linkedin={linkedin} instagram={instagram} dark />
               </div>
             </div>
             {category && <CategoryTag category={category} dark />}
@@ -179,6 +216,7 @@ export default function BuilderCard({ profile }: BuilderCardProps) {
             <div>
               <p className="font-space-grotesk font-bold text-sm text-deep-navy leading-tight">{name}</p>
               {role && <p className="font-manrope text-xs text-deep-navy/45 mt-0.5">{role}</p>}
+              <SocialLinks website={website} linkedin={linkedin} instagram={instagram} />
             </div>
           </div>
 
@@ -203,6 +241,7 @@ export default function BuilderCard({ profile }: BuilderCardProps) {
           <div>
             <p className="font-space-grotesk font-bold text-sm text-deep-navy leading-tight">{name}</p>
             {role && <p className="font-manrope text-xs text-deep-navy/45 mt-0.5">{role}</p>}
+            <SocialLinks website={website} linkedin={linkedin} instagram={instagram} />
           </div>
         </div>
         {category && <CategoryTag category={category} />}

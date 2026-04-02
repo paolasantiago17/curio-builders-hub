@@ -10,5 +10,8 @@ export const buildersQuery = `*[_type == "builderProfile"] | order(order asc, _c
   cardStyle,
   order,
   "avatarUrl": avatar.asset->url,
-  "projectImageUrl": projectImage.asset->url
+  "projectImageUrl": projectImage.asset->url,
+  website,
+  linkedin,
+  instagram
 }`;
