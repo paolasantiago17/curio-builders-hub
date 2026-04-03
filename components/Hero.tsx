@@ -80,7 +80,7 @@ export default function Hero() {
                     Tech Founder&apos;s Lounge
                   </p>
                   <p className="font-manrope text-sm text-deep-navy/70 leading-snug">
-                    Join 24+ founders this Thursday for coworking and coffee.
+                    Join fellow builders and founders for coworking and coffee.
                   </p>
                 </div>
               </div>
