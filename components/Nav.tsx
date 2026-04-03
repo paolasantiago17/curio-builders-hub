@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -12,68 +13,13 @@ export default function Nav() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <svg
-              width="28"
-              height="28"
-              viewBox="0 0 28 28"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="text-wisteria"
-            >
-              <circle
-                cx="14"
-                cy="14"
-                r="12"
-                stroke="currentColor"
-                strokeWidth="1.5"
-              />
-              <circle cx="14" cy="14" r="2" fill="currentColor" />
-              <line
-                x1="14"
-                y1="2"
-                x2="14"
-                y2="8"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-              />
-              <line
-                x1="14"
-                y1="20"
-                x2="14"
-                y2="26"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-              />
-              <line
-                x1="2"
-                y1="14"
-                x2="8"
-                y2="14"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-              />
-              <line
-                x1="20"
-                y1="14"
-                x2="26"
-                y2="14"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-              />
-              <line
-                x1="18"
-                y1="10"
-                x2="22"
-                y2="6"
-                stroke="currentColor"
-                strokeWidth="1"
-                strokeLinecap="round"
-              />
-            </svg>
+            <Image
+              src="/images/curio-logo.svg"
+              alt="Curio Builder's Hub"
+              width={28}
+              height={28}
+              className="w-7 h-7"
+            />
             <span className="font-space-grotesk font-bold text-deep-navy text-[15px] tracking-tight leading-tight">
               Curio Builder&apos;s Hub
             </span>
