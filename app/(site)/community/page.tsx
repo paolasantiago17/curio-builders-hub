@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import CommunityBoard from "@/components/CommunityBoard";
+import { client } from "@/sanity/lib/client";
+import { buildersQuery } from "@/sanity/lib/queries";
 
 export const metadata: Metadata = {
   title: "Community Board",
@@ -15,8 +17,6 @@ export const metadata: Metadata = {
     canonical: "https://curio.community/community",
   },
 };
-import { client } from "@/sanity/lib/client";
-import { buildersQuery } from "@/sanity/lib/queries";
 
 async function getBuilders() {
   try {
@@ -26,12 +26,6 @@ async function getBuilders() {
     return null;
   }
 }
-
-export const metadata = {
-  title: "Community Board — Curio Builder's Hub",
-  description:
-    "Direct visibility for our community's builders. Discover projects, offer your expertise, and find your next collaborator.",
-};
 
 export default async function CommunityPage() {
   const builders = await getBuilders();

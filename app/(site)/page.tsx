@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
 import Hero from "@/components/Hero";
+import Philosophy from "@/components/Philosophy";
+import EventRoadmap from "@/components/EventRoadmap";
+import CTA from "@/components/CTA";
+import { client } from "@/sanity/lib/client";
+import { eventsQuery } from "@/sanity/lib/queries";
 
 export const metadata: Metadata = {
   title: "Curio Builder's Hub — Where Builders Connect",
@@ -12,11 +17,6 @@ export const metadata: Metadata = {
     canonical: "https://curio.community",
   },
 };
-import Philosophy from "@/components/Philosophy";
-import EventRoadmap from "@/components/EventRoadmap";
-import CTA from "@/components/CTA";
-import { client } from "@/sanity/lib/client";
-import { eventsQuery } from "@/sanity/lib/queries";
 
 async function getEvents() {
   try {
