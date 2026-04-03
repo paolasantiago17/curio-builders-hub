@@ -33,8 +33,8 @@ export default async function Home() {
   return (
     <>
       <Hero />
-      <Philosophy />
       <EventRoadmap events={events} />
+      <Philosophy />
       <CTA />
     </>
   );
