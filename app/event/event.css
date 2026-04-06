@@ -1,0 +1,481 @@
+/* ─── Event Page — Shared Layout ─────────────────────────────────── */
+.event-page {
+  font-family: var(--font-dm-mono), 'DM Mono', monospace;
+  background: #fff;
+  color: #111;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 20px 40px;
+  min-height: 100vh;
+}
+
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 2px solid #111;
+  padding-bottom: 10px;
+  margin-bottom: 24px;
+}
+
+.event-logo {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #555;
+  line-height: 1.6;
+}
+
+.event-logo strong {
+  display: block;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: #111;
+}
+
+.event-info {
+  font-size: 9px;
+  color: #555;
+  text-align: right;
+  line-height: 1.7;
+}
+
+/* ─── Section Divider ─────────────────────────────────────────────── */
+.section-divider {
+  text-align: center;
+  margin: 40px 0;
+  color: #ccc;
+  font-size: 14px;
+  letter-spacing: 0.3em;
+  position: relative;
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: calc(50% - 60px);
+  height: 1px;
+  background: #e0e0e0;
+}
+
+.section-divider::before { left: 0; }
+.section-divider::after { right: 0; }
+
+/* ─── Shared Footer ───────────────────────────────────────────────── */
+.event-footer {
+  border-top: 1px solid #ddd;
+  padding-top: 12px;
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.event-footer-note {
+  font-size: 8.5px;
+  color: #555;
+  line-height: 1.7;
+  max-width: 70%;
+}
+
+.event-footer-stamp {
+  font-family: var(--font-fraunces), 'Fraunces', serif;
+  font-style: italic;
+  font-size: 11px;
+  color: #bbb;
+}
+
+/* ─── BINGO ───────────────────────────────────────────────────────── */
+.bingo-section {
+  margin-bottom: 8px;
+}
+
+.bingo-title {
+  font-family: var(--font-fraunces), 'Fraunces', serif;
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.bingo-subtitle {
+  text-align: center;
+  font-size: 11px;
+  color: #555;
+  margin-bottom: 16px;
+  letter-spacing: 0.02em;
+}
+
+.bingo-letters {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+  margin-bottom: 6px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bingo-letter {
+  text-align: center;
+  font-family: var(--font-fraunces), 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.bingo-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+  max-width: 800px;
+  margin: 0 auto 14px;
+}
+
+.bingo-cell {
+  border: 1.5px solid #111;
+  min-height: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8px 6px;
+  font-size: 10px;
+  line-height: 1.4;
+  color: #444;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.1s;
+  user-select: none;
+}
+
+.bingo-cell:hover {
+  background: #f5f5f5;
+}
+
+.bingo-cell.bingo-free {
+  background: #111;
+  color: #fff;
+  font-family: var(--font-fraunces), 'Fraunces', serif;
+  font-style: italic;
+  font-size: 13px;
+  cursor: default;
+  pointer-events: none;
+}
+
+.bingo-cell.bingo-marked {
+  background: #e8f5e9;
+  border-color: #2e7d32;
+}
+
+.bingo-cell.bingo-marked:hover {
+  background: #dcedc8;
+}
+
+.bingo-cell.bingo-winner {
+  background: #fff9c4;
+  border-color: #f9a825;
+}
+
+.bingo-cell-prompt {
+  font-size: 9.5px;
+  color: #444;
+  line-height: 1.4;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bingo-cell-name {
+  font-size: 12px;
+  font-weight: 500;
+  color: #2e7d32;
+  margin-top: 5px;
+  word-break: break-word;
+}
+
+.bingo-winner .bingo-cell-name {
+  color: #6d4c00;
+}
+
+.bingo-cell-edit-hint {
+  font-size: 8px;
+  color: #aaa;
+  margin-top: 3px;
+}
+
+/* Status */
+.bingo-status {
+  text-align: center;
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 8px;
+  min-height: 20px;
+}
+
+.bingo-status.bingo-win {
+  font-family: var(--font-fraunces), 'Fraunces', serif;
+  font-size: 20px;
+  color: #111;
+  font-weight: 700;
+}
+
+/* Reset */
+.bingo-reset-row {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.bingo-reset-btn {
+  border: 1px solid #ddd;
+  background: #fff;
+  font-family: var(--font-dm-mono), 'DM Mono', monospace;
+  font-size: 10px;
+  color: #aaa;
+  padding: 5px 14px;
+  cursor: pointer;
+}
+
+.bingo-reset-btn:hover {
+  border-color: #999;
+  color: #555;
+}
+
+/* BINGO rules footer */
+.bingo-rules {
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.bingo-rules p {
+  font-size: 9px;
+  color: #555;
+  line-height: 1.7;
+}
+
+.bingo-rules strong {
+  color: #111;
+}
+
+/* ─── Modal ───────────────────────────────────────────────────────── */
+.bingo-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bingo-modal {
+  background: #fff;
+  border: 2px solid #111;
+  padding: 24px 28px;
+  width: 320px;
+  max-width: 90vw;
+}
+
+.bingo-modal-title {
+  font-family: var(--font-fraunces), 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.bingo-modal-prompt {
+  font-size: 11px;
+  color: #555;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.bingo-modal-input {
+  width: 100%;
+  border: 1.5px solid #111;
+  padding: 10px 12px;
+  font-family: var(--font-dm-mono), 'DM Mono', monospace;
+  font-size: 14px;
+  outline: none;
+  background: #fff;
+  color: #111;
+  margin-bottom: 12px;
+}
+
+.bingo-modal-input:focus {
+  border-color: #555;
+}
+
+.bingo-modal-input::placeholder {
+  color: #bbb;
+}
+
+.bingo-modal-btns {
+  display: flex;
+  gap: 8px;
+}
+
+.bingo-btn-confirm {
+  flex: 1;
+  background: #111;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  font-family: var(--font-dm-mono), 'DM Mono', monospace;
+  font-size: 12px;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+}
+
+.bingo-btn-confirm:hover {
+  background: #333;
+}
+
+.bingo-btn-cancel {
+  padding: 10px 14px;
+  background: #fff;
+  border: 1.5px solid #ccc;
+  font-family: var(--font-dm-mono), 'DM Mono', monospace;
+  font-size: 12px;
+  cursor: pointer;
+  color: #555;
+}
+
+.bingo-btn-cancel:hover {
+  border-color: #999;
+}
+
+.bingo-btn-clear {
+  padding: 10px 14px;
+  background: #fff;
+  border: 1.5px solid #ccc;
+  font-family: var(--font-dm-mono), 'DM Mono', monospace;
+  font-size: 11px;
+  cursor: pointer;
+  color: #c00;
+}
+
+.bingo-btn-clear:hover {
+  border-color: #c00;
+}
+
+/* ─── Matching Section ────────────────────────────────────────────── */
+.match-section {
+  padding-top: 8px;
+}
+
+.match-title {
+  font-family: var(--font-fraunces), 'Fraunces', serif;
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.match-subtitle {
+  font-size: 10px;
+  color: #555;
+  margin-bottom: 14px;
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+}
+
+.match-intro {
+  font-size: 10px;
+  color: #333;
+  line-height: 1.7;
+  border-left: 3px solid #111;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+.match-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+@media (max-width: 600px) {
+  .match-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bingo-grid {
+    gap: 4px;
+  }
+
+  .bingo-cell {
+    min-height: 70px;
+    font-size: 9px;
+    padding: 6px 4px;
+  }
+
+  .bingo-title {
+    font-size: 28px;
+  }
+}
+
+.match-block {
+  border: 1.5px solid #111;
+  padding: 10px 12px;
+}
+
+.match-block-title {
+  font-family: var(--font-fraunces), 'Fraunces', serif;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.match-tag {
+  font-family: var(--font-dm-mono), 'DM Mono', monospace;
+  font-size: 7.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: #111;
+  color: #fff;
+  padding: 2px 6px;
+  position: relative;
+  top: -1px;
+}
+
+.match-tag.light {
+  background: #eee;
+  color: #333;
+}
+
+.match-person {
+  display: flex;
+  gap: 6px;
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+  align-items: baseline;
+}
+
+.match-person:last-child {
+  border-bottom: none;
+}
+
+.match-person-name {
+  font-weight: 500;
+  font-size: 10px;
+  min-width: 72px;
+  flex-shrink: 0;
+}
+
+.match-person-build {
+  font-size: 9px;
+  color: #555;
+  line-height: 1.4;
+  flex: 1;
+}
