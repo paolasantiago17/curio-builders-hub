@@ -44,11 +44,10 @@ const WANT_PRODUCT_FEEDBACK = [
 ];
 
 const FEELING_THE_SOLO_GRIND = [
-  { name: 'Tim', build: 'Golf event management software — "outreach every day is lonely"' },
   { name: 'Stephen R', build: 'PhonoLogic — wants community, not just advice' },
-  { name: 'Craig', build: 'TraceMem — just wants to build around people' },
   { name: 'Umar', build: 'AI SaaS — solo vs co-founder question on his mind' },
   { name: 'Anthony', build: 'AI agent for furniture retailers — looking for a tech co-founder' },
+  { name: 'Alex Morales', build: 'Building solo — sharing data sources for projects' },
 ];
 
 const WANT_TO_DEMO = [
@@ -67,6 +66,8 @@ const CAN_TEACH = [
   { name: 'Hieu', build: 'Offers a marketing lens on early-stage building' },
   { name: 'Harish', build: 'Agentic software factory — filtering signal from noise in AI' },
   { name: 'Kevin', build: 'Bitcoin infra — help founders work with AI agents' },
+  { name: 'Alex Morales', build: 'Can share data sources for your projects — just ask' },
+  { name: 'Abdel Elshrief', build: 'Fresh off building an enterprise MCP server — useful for anyone working with agents tonight' },
 ];
 
 const WANT_GTM = [
