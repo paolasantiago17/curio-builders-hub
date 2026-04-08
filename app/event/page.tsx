@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { DM_Mono, Fraunces } from 'next/font/google';
+import Nav from '@/components/Nav';
 import BingoCard from './BingoCard';
 import './event.css';
 
@@ -116,6 +117,8 @@ function MatchBlock({
 
 export default function EventPage() {
   return (
+    <>
+    <Nav />
     <div className={`${dmMono.variable} ${fraunces.variable} event-page`}>
       <header className="event-header">
         <div className="event-logo">
@@ -192,5 +195,6 @@ export default function EventPage() {
         <div className="event-footer-stamp">curio.community</div>
       </footer>
     </div>
+    </>
   );
 }
