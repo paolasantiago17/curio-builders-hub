@@ -104,8 +104,29 @@ export default function EventDirectoryPage({ data }: { data: EventDirectoryData 
           </div>
         )}
 
+        {/* Suggest a correction */}
+        <div className="mt-12 bg-white rounded-2xl border border-deep-navy/8 p-6 text-center shadow-sm">
+          <p className="font-space-grotesk font-bold text-sm text-deep-navy mb-1">
+            Is your info wrong or missing?
+          </p>
+          <p className="font-manrope text-xs text-deep-navy/55 mb-4">
+            We pulled this from your registration form. Let us know and we&apos;ll update it.
+          </p>
+          <a
+            href={`https://formspree.io/f/mjgpejva`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 font-manrope font-semibold text-xs text-wisteria border border-wisteria/40 bg-wisteria/5 hover:bg-wisteria hover:text-white px-5 py-2.5 rounded-full transition-colors"
+          >
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+            </svg>
+            Suggest a correction
+          </a>
+        </div>
+
         {/* Footer */}
-        <div className="mt-16 text-center">
+        <div className="mt-10 text-center">
           <p className="font-manrope text-xs text-deep-navy/35">
             Curio Builder&apos;s Hub · Est. 2026 ·{" "}
             <a href="https://curio.community" className="text-wisteria hover:underline">curio.community</a>
