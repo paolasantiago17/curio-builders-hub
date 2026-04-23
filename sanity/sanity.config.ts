@@ -29,6 +29,10 @@ export default defineConfig({
               .schemaType("builderProfile")
               .child(S.documentTypeList("builderProfile").title("Builder Profiles")),
             S.listItem()
+              .title("Event Directories")
+              .schemaType("eventDirectory")
+              .child(S.documentTypeList("eventDirectory").title("Event Directories")),
+            S.listItem()
               .title("Resources")
               .schemaType("resource")
               .child(S.documentTypeList("resource").title("Resources")),

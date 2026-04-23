@@ -40,6 +40,12 @@ export default function Nav() {
               Roadmap
             </Link>
             <Link
+              href="/events"
+              className="font-manrope text-sm font-medium text-deep-navy hover:text-wisteria transition-colors"
+            >
+              Events
+            </Link>
+            <Link
               href="/community"
               className="font-manrope text-sm font-medium text-deep-navy hover:text-wisteria transition-colors"
             >
@@ -106,6 +112,13 @@ export default function Nav() {
               onClick={() => setMobileOpen(false)}
             >
               Roadmap
+            </Link>
+            <Link
+              href="/events"
+              className="block px-4 py-3 font-manrope text-sm font-medium text-deep-navy hover:bg-off-white rounded-lg transition-colors"
+              onClick={() => setMobileOpen(false)}
+            >
+              Events
             </Link>
             <Link
               href="/community"
